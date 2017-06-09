@@ -2,6 +2,9 @@ package com.liubo.demo.rabbitmq.producer.person.controller;
 
 import com.liubo.demo.rabbitmq.person.model.PersonDO;
 import com.liubo.demo.rabbitmq.person.service.PersonService;
+
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +22,14 @@ public class PersonController {
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     public boolean addPerson() throws Exception {
-        PersonDO personDO = new PersonDO("222","333","fg",67);
+        PersonDO personDO = new PersonDO();
+        Random r = new java.util.Random();
         
         for (int i = 0; i < 1000; i++) {
-                System.out.println(i);
+            personDO.setAge(r.nextInt());
+            personDO.setUserId(System.currentTimeMillis()+"");
+            personDO.setUserName("卢梭"+i);
+                System.out.println(i+" ");
                 personService.addPerson(personDO);
         }
 
