@@ -30,7 +30,7 @@ public class SpringTaskDemo {
             personDO.setAge(r.nextInt());
             personDO.setUserId(System.currentTimeMillis()+"");
             personDO.setUserName("卢梭"+i);
-                System.out.println(i+" ");
+                System.out.print(i+" ");
                 personService.addPerson(personDO);
         }
     }
