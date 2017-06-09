@@ -1,5 +1,7 @@
 package com.liubo.demo.rabbitmq.producer.cron;
 
+import java.util.Date;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -11,8 +13,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableScheduling
 public class SpringTaskDemo {
 
-    @Scheduled(cron = "* 0/30 * * * ?") // 每30分钟执行一次
+    @Scheduled(cron = "0 */1 * * * ?") // 每30分钟执行一次
     public void scheduler() {
-        System.out.println(">>>>>>>>> 定时任务<<<<<<<<<<");
+        System.out.println(">>>>>>>>> 定时任务<<<<<<<<<<"+new Date());
     }
 }

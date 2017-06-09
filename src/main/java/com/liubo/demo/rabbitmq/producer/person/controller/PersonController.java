@@ -18,8 +18,11 @@ public class PersonController {
     private PersonService personService;
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public boolean addPerson(@RequestBody PersonDO personDO) throws Exception {
+    public boolean addPerson() throws Exception {
+        PersonDO personDO = new PersonDO("222","333","fg",67);
+        
         for (int i = 0; i < 1000; i++) {
+                System.out.println(i);
                 personService.addPerson(personDO);
         }
 
