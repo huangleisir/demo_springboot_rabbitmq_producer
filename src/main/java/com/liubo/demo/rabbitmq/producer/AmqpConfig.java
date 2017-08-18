@@ -23,7 +23,7 @@ public class AmqpConfig {
     public static final String EXCHANGE = "spring.boot.direct";
     public static final String ROUTINGKEY_FAIL = "spring.boot.routingKey.failure";
     public static final String ROUTINGKEY = "spring.boot.routingKey";
-    public static final String QUEUE_NAME = "spring.demo";
+    public static final String QUEUE_NAME = "spring.demo.FIRST";
     public static final String QUEUE_NAME_FAIL = "spring.demo.failure";
 
     //RabbitMQ的配置信息

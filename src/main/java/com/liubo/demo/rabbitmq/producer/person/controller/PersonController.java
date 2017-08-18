@@ -20,7 +20,7 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
+    @RequestMapping(value = "/add",method = RequestMethod.GET)
     public boolean addPerson() throws Exception {
         PersonDO personDO = new PersonDO();
         Random r = new java.util.Random();
@@ -28,7 +28,7 @@ public class PersonController {
         for (int i = 0; i < 1000; i++) {
             personDO.setAge(r.nextInt());
             personDO.setUserId(System.currentTimeMillis()+"");
-            personDO.setUserName("卢梭"+i);
+            personDO.setUserName("hero"+i);
                 System.out.println(i+" ");
                 personService.addPerson(personDO);
         }

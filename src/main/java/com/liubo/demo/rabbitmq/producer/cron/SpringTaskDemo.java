@@ -20,7 +20,7 @@ public class SpringTaskDemo {
     @Autowired
     private PersonService personService;
     
-    @Scheduled(cron = "0 */1 * * * ?") // 每30分钟执行一次
+    @Scheduled(cron = "0/10 * * * * ?") // 每10s执行一次
     public void scheduler() throws Exception {
         System.out.println(">>>>>>>>> 定时任务<<<<<<<<<<"+new Date());
         PersonDO personDO = new PersonDO();
@@ -30,7 +30,7 @@ public class SpringTaskDemo {
             personDO.setAge(r.nextInt());
             personDO.setUserId(System.currentTimeMillis()+"");
             personDO.setUserName("卢梭"+i);
-                System.out.print(i+" ");
+                System.out.print("卢梭"+i);
                 personService.addPerson(personDO);
         }
     }

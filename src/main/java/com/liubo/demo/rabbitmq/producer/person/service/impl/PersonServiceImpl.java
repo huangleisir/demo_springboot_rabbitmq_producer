@@ -1,5 +1,4 @@
 package com.liubo.demo.rabbitmq.producer.person.service.impl;
-
 import com.liubo.demo.rabbitmq.person.model.PersonDO;
 import com.liubo.demo.rabbitmq.person.service.PersonService;
 import com.liubo.demo.rabbitmq.producer.AmqpConfig;
